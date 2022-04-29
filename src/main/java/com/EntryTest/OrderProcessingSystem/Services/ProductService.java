@@ -1,5 +1,6 @@
 package com.EntryTest.OrderProcessingSystem.Services;
 
+import com.EntryTest.OrderProcessingSystem.Model.Order;
 import com.EntryTest.OrderProcessingSystem.Model.Product;
 
 import java.util.List;
@@ -22,5 +23,5 @@ public interface ProductService {
     Iterable<Product> findAllById(Iterable<Integer> longs);
 
     long count();
-
+    List<Order> findAllOrders();
 }
