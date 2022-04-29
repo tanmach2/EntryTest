@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: th="www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/customers/saveOrUpdate}" method="post" th:object="${customer}">
+    <div th:if ="${id > 0}">
+        <input th:field="*{id}" placeholder="Customer ID"> <br/>
+    </div>
+    <input type="text" th:field = "*{name}" placeholder="name"/> <br/>
+    <input type="text" th:field = "*{address}" placeholder="address"/> <br/>
+    <input type="text" th:field = "*{phone}" placeholder="phone"/> <br/>
+    <input type="submit" value="Add" />
+    <br/>
+    <a th:href="@{/customers/list}"> List Customers</a>
+</form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: th="www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action = "@{/orders/saveOrUpdate}" th:object = "@{order}" method="post">
+    Customer:
+    <select th:field="*{customer.id}"><option th:each="customer : @{customers}" th:value="@{customer.id}" th:text="@{customer.name}"></option></select>
+    CustomerName:
+    <input type="text" th:field="*{customerName}"/> <br/>
+    Amount:
+    <input type="text" th:field="*{amount}"/> <br/>
+    OrderDate:
+    <input type="text" th:field="*{orderDate}"/> <br/>
+    <input type="submit" value="Add"/>
+    <br/>
+    <a th:href="@{/orders/list}"> List Orders</a>
+</form>
+</body>
+</html>
